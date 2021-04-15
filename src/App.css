@@ -1,5 +1,22 @@
-.App {
-  background-color: #282c34;
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+.card {
+  border: 1px solid black;
+  margin: 5% 0%;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
 }
 
+.results {
+  padding-top: 1%;
+}
 
+.cardHeader {
+  background-color: lightgray;
+  padding-left: 3%;
+}
