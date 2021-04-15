@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -8,6 +9,7 @@ function Home() {
                 alt="bank"
             />
             <h1>Bank of React</h1>
+            <Link to="/debits">Debits Page</Link>
         </div>
     );
 }
