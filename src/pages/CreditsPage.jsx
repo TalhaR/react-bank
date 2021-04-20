@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import CreditsCard from './CreditsCard';
-import CreditsInputCard from './CreditsInputCard';
+import CreditsCard from '../components/CreditsCard';
+import CreditsInputCard from '../components/CreditsInputCard';
 const axios = require('axios');
 
 const CreditsPage = () => {

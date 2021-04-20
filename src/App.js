@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from './components/Home'
-import DebitsPage from './components/DebitsPage';
-import CreditsPage from './components/CreditsPage';
+import Home from './pages/Home'
+import DebitsPage from './pages/DebitsPage';
+import CreditsPage from './pages/CreditsPage';
 import './App.css';
 
 function App() {
