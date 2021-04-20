@@ -11,6 +11,10 @@ function Home() {
         alt="bank"
       />
       <h1>Bank of React</h1>
+      <Link to="/credits">
+        <button type="button" style={{padding: "10px 10px", fontSize: '16px'}}> Credits Page </button>
+      </Link>
+
       <Link to="/debits">
         <button type="button" style={{padding: "10px 10px", fontSize: '16px'}}> Debits Page </button>
       </Link>
