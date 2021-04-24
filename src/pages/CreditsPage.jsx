@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CreditsCard from '../components/CreditsCard';
+import AccountBalanceCard from '../components/AccountBalanceCard';
 import CreditsInputCard from '../components/CreditsInputCard';
 const axios = require('axios');
 
@@ -18,6 +19,7 @@ const CreditsPage = () => {
 
     getCredits();
   }, [])
+
 
   const generateCredits = () => { // generate a list of cards for the page to display
     return credits.map((credit) => {
@@ -45,19 +47,56 @@ const CreditsPage = () => {
     setAmountField(e.target.value);
   }
 
+  const [debits, setDebits] = useState([]);
+  useEffect(() => {
+    document.title = "Debits"; // sets the title of the page to Debits
+
+    const getDebits = async () => { // call the api whenever the page loads and store data in debits
+      let res = await axios.get('https://moj-api.herokuapp.com/debits');
+      setDebits(res.data);
+    }
+
+    getDebits();
+  }, [])
+
+  const generateAccountBalance = () => { 
+    let sum = 0; 
+    let val = 0.00;
+
+    let temp = credits.map((credit) => { 
+      return credit.amount; 
+    });
+
+    for (let i = 0; i < temp.length; i++) { 
+      val = Number(temp[i]);
+      sum += val;
+      sum = Math.round(sum * 100) / 100;
+    }
+
+    temp = debits.map((debit) => { 
+      return debit.amount; 
+    });
+
+    for (let i = 0; i < temp.length; i++) { 
+      val = Number(temp[i]);
+      sum -= val;
+      sum = Math.round(sum * 100) / 100;
+    }
+
+    return <AccountBalanceCard amount={sum}/>;
+  }
+
   return (
     <div className="App" >
       <header className="App-header">
         <h2>Credits Page</h2>
       </header >
       <div style={{textAlign: "center"}}>
-        <h1> Someone needs to handle the account balance here </ h1>
+        {generateAccountBalance()}
         <CreditsInputCard handleSubmit={handleSubmit} handleDescriptionChange={handleDescriptionChange} handleAmountChange={handleAmountChange}/>
         {generateCredits()}
       </div>
     </div >
-
-    
   )
 }
 
