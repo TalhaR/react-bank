@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import DebitsCard from '../components/DebitsCard';
+import AccountBalanceCard from '../components/AccountBalanceCard';
 import DebitsInputCard from '../components/DebitsInputCard';
 const axios = require('axios');
 
@@ -42,13 +43,52 @@ const DebitsPage = () => {
     setAmountField(e.target.value);
   }
 
+  const [credits, setCredits] = useState([]);
+  useEffect(() => {
+    document.title = "Credits"; // sets the title of the page to Credit
+
+    const getCredits = async () => { // call the api whenever the page loads and store data in credits
+      let res = await axios.get('https://moj-api.herokuapp.com/credits');
+      setCredits(res.data);
+    }
+
+    getCredits();
+  }, [])
+
+  const generateAccountBalance = () => { 
+    let sum = 0; 
+    let val = 0.00;
+
+    let temp = credits.map((credit) => { 
+      return credit.amount; 
+    });
+
+    for (let i = 0; i < temp.length; i++) { 
+      val = Number(temp[i]);
+      sum += val;
+      sum = Math.round(sum * 100) / 100;
+    }
+
+    temp = debits.map((debit) => { 
+      return debit.amount; 
+    });
+    
+    for (let i = 0; i < temp.length; i++) { 
+      val = Number(temp[i]);
+      sum -= val;
+      sum = Math.round(sum * 100) / 100;
+    }
+
+    return <AccountBalanceCard amount={sum}/>;
+  }
+
   return (
     <div className="App" >
       <header className="App-header">
         <h2>Debits Page</h2>
       </header >
       <div style={{textAlign: "center"}}>
-        <h1> Someone needs to handle the account balance here </ h1>
+        {generateAccountBalance()}
         <DebitsInputCard handleSubmit={handleSubmit} handleDescriptionChange={handleDescriptionChange} handleAmountChange={handleAmountChange}/>
         {generateDebits()}
       </div>

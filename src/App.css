@@ -6,8 +6,16 @@
 }
 .card {
   border: 1px solid black;
-  margin: 5% 0%;
+  margin: 1% 0%;
   width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+
+.card2 {
+  border: 1px solid black;
+  margin: 3% 0%;
+  width: 75%;
   display: inline-block;
   text-align: center;
 }
@@ -18,5 +26,9 @@
 
 .cardHeader {
   background-color: lightgray;
-  padding-left: 3%;
+  padding-left: 1%;
+}
+
+h5 { 
+  font-size: 1.25em;
 }
