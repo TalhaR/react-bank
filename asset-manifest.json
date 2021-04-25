@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-bank/static/css/main.ec6860a4.chunk.css",
-    "main.js": "/react-bank/static/js/main.6daa19ec.chunk.js",
-    "main.js.map": "/react-bank/static/js/main.6daa19ec.chunk.js.map",
+    "main.css": "/react-bank/static/css/main.25499da0.chunk.css",
+    "main.js": "/react-bank/static/js/main.4879462a.chunk.js",
+    "main.js.map": "/react-bank/static/js/main.4879462a.chunk.js.map",
     "runtime-main.js": "/react-bank/static/js/runtime-main.5d0775d7.js",
     "runtime-main.js.map": "/react-bank/static/js/runtime-main.5d0775d7.js.map",
     "static/js/2.fea086c8.chunk.js": "/react-bank/static/js/2.fea086c8.chunk.js",
     "static/js/2.fea086c8.chunk.js.map": "/react-bank/static/js/2.fea086c8.chunk.js.map",
     "index.html": "/react-bank/index.html",
-    "static/css/main.ec6860a4.chunk.css.map": "/react-bank/static/css/main.ec6860a4.chunk.css.map",
+    "static/css/main.25499da0.chunk.css.map": "/react-bank/static/css/main.25499da0.chunk.css.map",
     "static/js/2.fea086c8.chunk.js.LICENSE.txt": "/react-bank/static/js/2.fea086c8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5d0775d7.js",
     "static/js/2.fea086c8.chunk.js",
-    "static/css/main.ec6860a4.chunk.css",
-    "static/js/main.6daa19ec.chunk.js"
+    "static/css/main.25499da0.chunk.css",
+    "static/js/main.4879462a.chunk.js"
   ]
 }
